@@ -3,12 +3,12 @@ require_once('Dynamic.php');
 class DynamicTests extends PHPUnit_Framework_TestCase
 {
 	/** @test */
-  public function CanAssignArbitraryProperties()
+	public function CanAssignArbitraryProperties()
 	{
 		$obj = new Dynamic;
 		$obj->key = '666';
 		$this->assertEquals(666, $obj->key);
-  }
+	}
 
 	/** @test */
 	public function CanAssignArbitraryFunctions()
@@ -29,9 +29,9 @@ class DynamicTests extends PHPUnit_Framework_TestCase
 	}
 
 	/** 
-   * @test 
-   * @expectedException InvalidArgumentException
-   */
+	 * @test 
+	 * @expectedException InvalidArgumentException
+	 */
 	public function ThrowsInvalidArgumentExceptionWhenNonexistentMethodCalled()
 	{
 		$obj = new Dynamic;
@@ -39,17 +39,14 @@ class DynamicTests extends PHPUnit_Framework_TestCase
 	}
 
 	/** 
-   * @test 
-   * @expectedException PHPUnit_Framework_Error_Notice
+	 * @test 
+	 * @expectedException PHPUnit_Framework_Error_Notice
 	 * @expectedExceptionMessage Undefined property: Dynamic::$nonexistent
-   */
+	 */
 	public function ThrowsInvalidArgumentExceptionWhenNonexistentPropertyRequested()
 	{
 		$obj = new Dynamic;
 		$obj->nonexistent;
 	}
-
-
-	
 }
 
